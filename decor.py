@@ -40,7 +40,7 @@ def parent(num):
 foo=parent(10)
 bar=parent(11)
 
-def my_decorator(some_function):
+def my_decorator_old(some_function):
     
     def wrapper():
         print("Something is happening before some_function() is called")
@@ -54,6 +54,21 @@ def my_decorator(some_function):
 def just_some_function():
     print("Wheee!")
     
-just_some_function = my_decorator(just_some_function)
-just_some_function()
+#just_some_function = my_decorator_old(just_some_function)
+#just_some_function()
         
+def my_decorator(some_function):
+    def wrapper():
+        
+        num=10
+        if num == 10:
+            print("Yes!")
+        else:
+            print("No!")
+            
+        some_function()
+        
+        print("Something is happening after some_function() is called")
+    return wrapper
+    
+just_some_function = my_decorator(just_some_function)

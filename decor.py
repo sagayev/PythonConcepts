@@ -51,8 +51,8 @@ def my_decorator_old(some_function):
         
     return wrapper
     
-def just_some_function():
-    print("Wheee!")
+#def just_some_function():
+#    print("Wheee!")
     
 #just_some_function = my_decorator_old(just_some_function)
 #just_some_function()
@@ -71,4 +71,9 @@ def my_decorator(some_function):
         print("Something is happening after some_function() is called")
     return wrapper
     
-just_some_function = my_decorator(just_some_function)
+#just_some_function = my_decorator(just_some_function)
+from my_dec import my_decorator
+
+@my_decorator
+def just_some_function():
+    print("Whee!")
